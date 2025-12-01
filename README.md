@@ -174,6 +174,7 @@ By combining Otsu and hand-labeled data:
 - Dataset-specific statistics (JSON)
 - Confusion matrices  
 
+Below are the performance from out models
 <img src="/images/inference_and_gradcam.png">
 
 Flood segmentation by the best-performing model (ResUNet+AttentionBlock+SE) with Grad-CAM++ interpretability. (a) Sentinel-1 SAR composite. (b) Ground truth. (c) Model prediction. (d) Grad-CAM++ overlay. (e) Grad-CAM++ heatmap.
@@ -204,6 +205,9 @@ The model is evaluated separately on each dataset type to understand:
 - Performance on high-quality hand labels
 - Impact of invalid pixel ratios
 - Cross-dataset consistency
+
+<img src="/images/Table-our-models.png">
+
 
 Metrics are reported both per-image (individual sample quality) and aggregated (overall performance), providing insights at multiple granularities.
 
