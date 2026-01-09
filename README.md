@@ -21,8 +21,9 @@ This repository provides a complete end-to-end pipeline for flood segmentation f
 ## Pipeline Architecture
 
 ### 1. Dataset Preprocessing
+- The Hand labelled dataset has "-1" as invalid label. This requires the hand labelled section to be excluded from the training and also adjust the metrics differently.
 
-The preprocessing stage unifies handlabelled and otsu labelled data:
+- The preprocessing stage unifies handlabelled and otsu labelled data:
 
 **Band Engineering**:
 The pipeline computes three bands from VH and VV polarizations:
@@ -161,7 +162,7 @@ By combining Otsu and hand-labeled data:
 ## Output Artifacts
 
 **Training Outputs**:
-- Best model checkpoint (.keras)
+- Best model checkpoint
 - Training history plots (loss, metrics, learning rate)
 - Normalization parameters
 - Class weights for imbalance handling
@@ -169,7 +170,7 @@ By combining Otsu and hand-labeled data:
 - CSV training logs
 
 **Inference Outputs**:
-- Prediction visualizations (6-panel comparisons)
+- Prediction visualizations
 - Per-sample metrics (CSV)
 - Dataset-specific statistics (JSON)
 - Confusion matrices  
@@ -200,16 +201,13 @@ The pipeline supports reproducibility through fixed random seeds and determinist
 
 ## Performance Characteristics
 
-The model is evaluated separately on each dataset type to understand:
-- Generalization to weakly-supervised labels
-- Performance on high-quality hand labels
-- Impact of invalid pixel ratios
-- Cross-dataset consistency
 
-Table for Performance metrics of our models:  
+### Table for Performance metrics of our models:  
 <img src="/images/Table-our-models.png">
 
+### Hyperparameters for best model:
+<img src="/images/HyperParam_best_model.png">
 
-Metrics are reported both per-image (individual sample quality) and aggregated (overall performance), providing insights at multiple granularities.
-
+### Performance analysis of different loss functions for ResUNet + AB + SE.
+<img src="/images/variation_loss.png">
 ---
