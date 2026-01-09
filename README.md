@@ -21,7 +21,7 @@ This repository provides a complete end-to-end pipeline for flood segmentation f
 ## Pipeline Architecture
 
 ### 1. Dataset Preprocessing
-- The Hand labelled dataset has "-1" as invalid label. This requires the hand labelled section to be excluded from the training and also adjust the metrics differently.
+- The Hand labelled dataset has "-1" as invalid label. This requires the "-1" labels to be excluded from the training and also adjust the metrics calculations.
 
 - The preprocessing stage unifies handlabelled and otsu labelled data:
 
